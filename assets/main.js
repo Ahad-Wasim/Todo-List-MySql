@@ -4,9 +4,9 @@ $('document').ready(function(){  //when the document is ready
         var todoadd = $("#todo-add");
         var form_data={
             title:todoadd.find("input[name=title]").val(),
-date:todoadd.find("input[name=date]").val(),
-details:todoadd.find("textarea[name=details]").val(),
-        }//get all the values from the form and add them to our data object for sending
+            date:todoadd.find("input[name=date]").val(),
+            details:todoadd.find("textarea[name=details]").val(),
+        }; //get all the values from the form and add them to our data object for sending
         $.ajax(
         {
             url: 'actions/add.php',//send our data to the add.php file
@@ -16,11 +16,13 @@ details:todoadd.find("textarea[name=details]").val(),
             method: 'POST', //use POST to send it
             success: function(data){ //and do something when the response comes back
                 //success is achieved!
+                // $("#display_refresh").click();
             }
         }); 
         
             
     });
+
     $("#display_refresh").click(function(){  //add a click handler to our data display button
 
         $.ajax(
@@ -28,14 +30,21 @@ details:todoadd.find("textarea[name=details]").val(),
             url: 'actions/get.php',  //get our data from the get.php file
             dataType: 'json', //expect json data back from get.php
             cache: false, //do not cache the result
-            method: 'POST',  //use the post method
-            success: function(data){  //do something when we get data back
-                if(data.success)
-                {
-                    $("#todo-display > .display_container").html(data.html); //take the html object of the data object, and put it into the display container
-                }
-            }
+            method: 'POST'  //use the post method
+
+        }).done(function(data)
+        {  //do something when we get data back
+            console.log("data is ",data);
+
+               $("#todo-display > .display_container").html(data.html);
+                //$("#todo-display > .display_container").html(data.html); //take the html object of the data object, and put it into the display container
+                
+        }).always(function(){
+            console.log("test");
+        }).fail(function(){
+            console.log("failed");
         });
             
     });
+
 });

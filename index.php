@@ -1,6 +1,8 @@
 <?php 
-//include functions.php file
+include('includes/functions.php');                                  //include functions.php file
 ?>
+
+
 <!doctype html>
 
 <html>
@@ -14,28 +16,56 @@
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/main.js"></script>
 </head>
+
+
+<style>
+    /*
+    .title, .date, .details{
+        color: white;
+        font-weight: bold;
+        border:1px solid black;
+        background:red;
+    }
+    */
+
+    .delete{
+        float: right;
+        color:black;
+    }
+
+    
+
+</style>
+
+
+
 <body>
 
+
 <?php 
-//include header.php
+include('includes/header.php');                                       //include header.php
 ?>
     <main id="main-content">
+        
         <section id="todo-display">
             <button id="display_refresh" type="button" class="glyphicon glyphicon-refresh"></button>
             <div class="display_container"></div>
         </section>
+        
+
+
         <section id="todo-add">
             <form>
                 <input type="text" name="title" placeholder="Task Title">
-                <input type="text" name="date" placeholder="Task Due">
-                <textarea name="details" placeholder="Task"></textarea>
+                <input type="text" name="date" placeholder="Task Date">
+                <textarea name="details" placeholder="Task Details"></textarea>
                 <button type="button" id="save_task" class="glyphicon glyphicon-plus"></button>
             </form>
         </section>
         
     </main>
 <?php 
-//include footer.php
+include('includes/footer.php');                                         //include footer.php
 ?>
 </body>
 </html>

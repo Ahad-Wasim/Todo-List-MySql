@@ -68,9 +68,12 @@
             
             //echo $newKeys;
 
-             $contents_array[$newKeys] =  $assArray;  // add a new associative array to our todo.json array, key=name generated on line above, and value is the array generated from the input data
+
+            $assArray['data_id'] = $newKeys;
             
-           echo $contents_array;
+            $contents_array[] = $assArray;    // add a new associative array to our todo.json array, key=name generated on line above, and value is the array generated from the input data
+            
+           //echo $contents_array;
 
             // [TIME_STAMP + 'LSKDAJFJL'=> TITLE, DATE, DETAILS] 
 
@@ -82,9 +85,14 @@
            
            $files = file_put_contents('../data/todo.json',$updated_json);                      // use file_put_contents to replace the contents of the todo.json with our json_encoded object
             
+
+           
            
            //NOW THE JSON FILE HAVE BEEN UPDATED
             
+
+
+           
             
             
 
@@ -112,7 +120,7 @@
     else //post wasn't set, no data was available
     {
         $output_array['success'] = false;// add a success field to our output array, and set it to false
-         $output_array['message'] = 'asdf';//give an appropriate message indicating failure
+         $output_array['message'] = 'Please type in some texts inside the textfields';//give an appropriate message indicating failure
     }
         echo  json_encode($output_array);//json_encode our output array, and echo it
 

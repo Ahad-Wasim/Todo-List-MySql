@@ -17,7 +17,9 @@
         foreach($newfile as $key => $list)//loop through the elements of our todo array, fetching the key and record for each one
         {
             
-        print_r($list);     
+        print_r($newfile);     
+
+     
 
      //make an html element set to contain olistr todo record, much like our student record from Student Grade Table;  It should include a data-id attribute with the key (for later deleting / editing), the title, the date converted to a human-readable format, and the todo details.  Make sure to use the nl2br() function on the details so it looks right in html
      

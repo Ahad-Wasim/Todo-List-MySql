@@ -31,6 +31,7 @@ include('includes/functions.php');                                  //include fu
     .delete{
         float: right;
         color:black;
+        font-weight: bold;
     }
 
     

@@ -44,7 +44,7 @@ $('document').ready(function(){
             success: function(data){
                 if(data.success)
                 {
-                    $(".todo-list").html(data.html);
+                    $("#todo-display > .display_container").html(data.html);
                     
                 }
             }
@@ -61,10 +61,10 @@ $('document').ready(function(){
 
 
 
-     $('.todo-list').on('click', '.delete_btn', function(){
-        var confirmation = confirm("Delete task?");
-         if(confirmation == true) {
-         $uniqueid = {ID:$(this).parent().attr('data-id')};
+     $('#todo-display').on('click', '.delete', function(){
+        var confirmation = confirm("Are you sure you want to delete this task?");
+         if(confirmation) {
+         $uniqueid = {id:$(this).parent().attr('data-id')};
          $(this).parent().remove();
         $.ajax(
         {
@@ -79,6 +79,7 @@ $('document').ready(function(){
 //                {
 //                    $(".todo-list").html(data.html);
 //                }
+                     $("#display_refresh").click();
             }
         });
          } 

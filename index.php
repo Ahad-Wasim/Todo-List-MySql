@@ -20,10 +20,17 @@ include('includes/functions.php');                                  //include fu
 
 <style>
    
+    .data_div{
+        background:red;
+        color:white;
+        font-weight: bold;
+        /*box-sizing:border-box;*/
+    }
+
 
     .delete{
-        float: right;
-        color:black;
+        float:right;
+        color: black;        
         font-weight: bold;
     }
 

@@ -53,10 +53,25 @@
 
 
 			$result = mysqli_query($connection, $query);
+
+			$output['success'] = true;
+			$output['message'] = 'Everything is working well';
 	
 
+		} else {
+			$output['success']=false;
+        	$output['message']='Data save failed';
+        	echo json_encode($error);
+       	    
 		}
+	} else {
+			$output['success'] = false;
+			$output['message'] = "No Data availabe";
 	}
+
+	echo json_encode($output);
+
+
 
 
 

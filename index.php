@@ -19,14 +19,7 @@ include('includes/functions.php');                                  //include fu
 
 
 <style>
-    /*
-    .title, .date, .details{
-        color: white;
-        font-weight: bold;
-        border:1px solid black;
-        background:red;
-    }
-    */
+   
 
     .delete{
         float: right;

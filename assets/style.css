@@ -58,3 +58,7 @@ body{
 }
 #display_refresh{
 }
+
+.delete{
+    float:right;
+}

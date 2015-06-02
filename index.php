@@ -21,15 +21,19 @@ include('includes/functions.php');                                  //include fu
 <style>
    
     .data_div{
-        background:red;
-        color:white;
+        border:1px solid black;
+        color:black;
+        margin-bottom: 20px;
         font-weight: bold;
+        height:25px;
+        position:relative;
         /*box-sizing:border-box;*/
     }
 
 
     .delete{
-        float:right;
+        position:absolute;
+        right:0;
         color: black;        
         font-weight: bold;
     }

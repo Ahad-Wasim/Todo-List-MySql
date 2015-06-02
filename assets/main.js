@@ -45,6 +45,7 @@ $('document').ready(function(){
                 if(data.success)
                 {
                     $("#todo-display > .display_container").html(data.html);
+                    $('.hello').html(data.html);
                     
                 }
             }
